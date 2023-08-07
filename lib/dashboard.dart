@@ -14,6 +14,12 @@ class _ApiIntegrationState extends State<ApiIntegration> {
   List<dynamic> users = [];
 
   @override
+  void initState() {
+    super.initState();
+    fetchUsers();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -35,9 +41,6 @@ class _ApiIntegrationState extends State<ApiIntegration> {
             subtitle: Text(email),
           );
         },
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: fetchUsers,
       ),
     );
   }
